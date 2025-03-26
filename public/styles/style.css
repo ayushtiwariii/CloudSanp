@@ -1,0 +1,151 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset & Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Gradient Animated Background */
+body {
+    background: linear-gradient(-45deg, #1e1e2e, #23232e, #2b2b3a, #171721);
+    background-size: 400% 400%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: gradientMove 10s ease infinite;
+}
+
+/* Background Animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating Neon Glows */
+body::before, body::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    opacity: 0.15;
+    filter: blur(100px);
+    animation: floatingGlow 8s infinite alternate ease-in-out;
+}
+
+body::before {
+    background: #ff0077;
+    top: -100px;
+    left: -100px;
+}
+
+body::after {
+    background: #00ccff;
+    bottom: -100px;
+    right: -100px;
+}
+
+/* Floating Animation */
+@keyframes floatingGlow {
+    from { transform: translateY(-20px); }
+    to { transform: translateY(20px); }
+}
+
+/* Glassmorphic Card */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 40px;
+    width: 420px;
+    box-shadow: 0px 10px 50px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.03);
+}
+
+/* Form Inputs */
+.form-group {
+    margin: 20px 0;
+}
+
+/* Custom File Upload Button */
+label {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+label:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Hide Default File Input */
+input[type="file"] {
+    display: none;
+}
+
+/* Upload Button */
+input[type="submit"] {
+    background: linear-gradient(45deg, #ff0077, #ff0066, #ff4d94);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 100%;
+    font-size: 16px;
+    box-shadow: 0px 4px 10px rgba(255, 0, 119, 0.4);
+}
+
+input[type="submit"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(255, 0, 119, 0.6);
+}
+
+/* Uploaded Image Section */
+#uploaded-image-container {
+    margin-top: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+    color: #fff;
+    font-size: 18px;
+}
+
+/* Uploaded Image */
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
